@@ -6,21 +6,30 @@
 from spack import *
 
 
-class Nrm(PythonPackage):
-    """Node Resource Manager"""
+class Nrm(Package):
+    """Node Resource Manager. Installs nrm-core and py-nrm.
+    Builds and installs documentation, includes examples."""
 
-    homepage = "https://xgitlab.cels.anl.gov/argo/nrm"
-    url = "https://www.mcs.anl.gov/research/projects/argo/downloads/nrm-0.1.0.tar.gz"
-    version('0.1.0', sha256='911a848042fa50ed216c818e0667bcd3e4219687eb5a35476b7313abe12106dc')
+    homepage = "https://nrm.readthedocs.io/en/latest/"
 
-    depends_on('py-setuptools', type=('build'))
+    url = "https://github.com/anlsys/nrm-docs/archive/refs/tags/v0.7.0.tar.gz"
+    maintainers = ['perarnau']
 
-    depends_on('py-six', type=('build', 'run'))
-    depends_on('py-pyzmq@17.1.2', type=('build', 'run'))
-    depends_on('py-pyyaml', type=('build', 'run'))
-    depends_on('py-tornado@5.1.1', type=('build', 'run'))
-    depends_on('py-numpy', type=('build', 'run'))
-    depends_on('py-argparse@1.2.1:', type=('build', 'run'), when='^python@:2.6')
-    depends_on('py-jsonschema@2.6.0', type=('build', 'run'))
-    depends_on('py-warlock', type=('build', 'run'))
-    depends_on('py-scipy', type=('build', 'run'))
+    version("0.7.0", sha256="75333e2bcc94cc98ccc3680e056c2e188799aa0cf5d0e56550ec7a9980c13d94")
+
+    depends_on('py-nrm@0.7.0', type=('build', 'run'))
+    depends_on('nrm-core@0.7.0', type=('build', 'run'))
+    depends_on('libnrm@0.7.0', type=('build', 'run'))
+    depends_on('nrm-extra@0.7.0', type=('build', 'run'))
+
+    depends_on('py-sphinx@2.4.4', type=('build'))
+    depends_on('py-docutils@0.17', type=('build'))
+    depends_on('py-nbsphinx', type=('build'))
+
+    def install(self, spec, prefix):
+        with working_dir('doc'):
+            make('html', parallel=False)
+            mkdirp(prefix.share.html)
+            mkdirp(prefix.share.examples)
+            install_tree('.build/html', prefix.share.html)
+            install_tree('../examples', prefix.share.examples)

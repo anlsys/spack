@@ -10,17 +10,12 @@ class Libnrm(AutotoolsPackage):
     """Libnrm, the application instrumentation library for the Node
     Resource Manager(NRM)."""
 
-    homepage = "https://xgitlab.cels.anl.gov/argo/libnrm"
-    url = "https://www.mcs.anl.gov/research/projects/argo/downloads/libnrm-0.1.0.tar.gz"
-    version('0.1.0', sha256='f849ada384025fa41251acc2a43aa335e0cb1b9cd1c8ab8b9d1808a036ae551e')
+    homepage = "https://nrm.readthedocs.io/en/latest/"
+    url = "https://github.com/anlsys/libnrm/releases/download/v0.7.0/libnrm-0.7.0.tar.gz"
+    version('0.7.0', sha256='30933537e9db6c1f35a3eda421794d2a562c492b520ed20e6490571b3ce0f1d8')
 
+    maintainers = ['perarnau']
     tags = ['e4s']
 
-    depends_on('m4', type='build')
-    depends_on('autoconf', type='build')
-    depends_on('automake', type='build')
-    depends_on('libtool', type='build')
     depends_on('pkgconfig', type='build')
-
     depends_on('libzmq')
-    depends_on('mpich')
