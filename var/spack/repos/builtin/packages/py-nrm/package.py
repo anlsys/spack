@@ -15,8 +15,7 @@ class PyNrm(PythonPackage):
 
     maintainers = ['perarnau']
 
-    version('0.7',
-            url='https://github.com/anlsys/nrm-python/archive/refs/heads/master.zip')
+    version('main', url='https://github.com/anlsys/nrm-python/archive/refs/heads/master.zip')
 
     depends_on('python@3.6:', type=('build', 'run'))
     depends_on('py-setuptools', type='build')
