@@ -35,7 +35,5 @@ class NrmCore(Package):
     conflicts('platform=darwin', msg='Darwin is not supported.')
     conflicts('platform=windows', msg='Windows is not supported.')
 
-    executables = ['^nrm$']
-
     def install(self, spec, prefix):
         install_tree('.', prefix)
