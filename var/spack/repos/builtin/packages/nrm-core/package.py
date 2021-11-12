@@ -15,6 +15,8 @@ class NrmCore(Package):
 
     homepage = "https://nrm.readthedocs.io"
 
+    maintainers = ['perarnau']
+
     # nrm-core is written in Haskell which is currently not supported in
     # spack, thus a similar approach as in the pandoc package was chosen. The
     # following installs the standalone binaries and shared libraries for nrm.
@@ -23,10 +25,12 @@ class NrmCore(Package):
 
     version('0.7.0', sha256='7cd5f592119378c65f14e581350034676e29ffbbddc952249d21c1c4dae16fa5')
 
+    depends_on('gmp')
     depends_on('zlib')
     depends_on('libffi')
     depends_on('libzmq')
     depends_on('ncurses')
+    depends_on('hwloc@2.0.0', type=('build', 'run'))
 
     conflicts('platform=darwin', msg='Darwin is not supported.')
     conflicts('platform=windows', msg='Windows is not supported.')

@@ -20,9 +20,11 @@ class PyNrm(PythonPackage):
     depends_on('python@3.6:', type=('build', 'run'))
     depends_on('py-setuptools', type='build')
     depends_on('nrm-core@0.7.0')
+    depends_on('py-msgpack', type=('build', 'run'))
+    depends_on('py-warlock@1.3.3', type=('build', 'run'))
     depends_on('py-pyzmq', type=('build', 'run'))
-    depends_on('py-tornado', type=('build', 'run'))
-    depends_on('py-jsonschema', type=('build', 'run'))
+    depends_on('py-tornado@5.1.1', type=('build', 'run'))
+    depends_on('py-jsonschema@3.2.0', type=('build', 'run'))
 
     def setup_run_environment(self, env):
         env.prepend_path('LD_LIBRARY_PATH', self.spec['nrm-core'].prefix.lib)
