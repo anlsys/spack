@@ -14,9 +14,8 @@ class PyNrm(PythonPackage):
     homepage = "https://nrm.readthedocs.io"
 
     maintainers = ['perarnau']
-    url='https://github.com/anlsys/nrm-python/archive/refs/heads/master.zip'
 
-    version('master', branch='master')
+    version('master', url='https://github.com/anlsys/nrm-python/archive/refs/heads/master.zip')
 
     depends_on('python@3.6:', type=('build', 'run'))
     depends_on('py-setuptools', type='build')
