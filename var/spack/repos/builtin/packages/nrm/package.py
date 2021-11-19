@@ -13,5 +13,5 @@ class Nrm(Package):
     git = "https://github.com/anlsys/nrm-docs.git"
     version("main", branch="main")
 
-    depends_on('py-nrm', type=('build', 'run'))
-    depends_on('nrm-core', type=('build', 'run'))
+    depends_on('py-nrm@0.7.0', type=('build', 'run'))
+    depends_on('nrm-core@0.7.0', type=('build', 'run'))
