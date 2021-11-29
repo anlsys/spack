@@ -13,10 +13,10 @@ class PyNrm(PythonPackage):
 
     homepage = "https://nrm.readthedocs.io"
 
-    url='https://github.com/anlsys/nrm-python/archive/refs/heads/master.zip'
+    url='https://github.com/anlsys/nrm-python/archive/refs/tags/v0.7.0.tar.gz'
     maintainers = ['perarnau']
 
-    version('0.7.0', sha256='fc5fb2cd9ad721aac5e7dd1235fe3355e9a739199f21fb908cdbce5b866d6c76')
+    version('0.7.0', sha256='474f656f5696a6d6f5680d8e2f8470612aa181b9496058fa9d3e092b0a3adc50')
 
     depends_on('python@3.6:', type=('build', 'run'))
     depends_on('py-setuptools', type='build')
