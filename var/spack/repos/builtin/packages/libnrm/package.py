@@ -10,9 +10,9 @@ class Libnrm(AutotoolsPackage):
     """Libnrm, the application instrumentation library for the Node
     Resource Manager(NRM)."""
 
-    homepage = "https://xgitlab.cels.anl.gov/argo/libnrm"
-    url = "https://www.mcs.anl.gov/research/projects/argo/downloads/libnrm-0.1.0.tar.gz"
-    version('0.1.0', sha256='f849ada384025fa41251acc2a43aa335e0cb1b9cd1c8ab8b9d1808a036ae551e')
+    homepage = "https://nrm.readthedocs.io/en/latest/"
+    url = "https://github.com/anlsys/libnrm/archive/refs/tags/v0.7.0.tar.gz"
+    version('0.7.0', sha256='48be63ef90271050d27f03bf3006a71b49e668d2e2a80abd4c2ed02b49ac4204')
 
     tags = ['e4s']
 
