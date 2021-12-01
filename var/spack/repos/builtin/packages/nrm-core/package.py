@@ -30,7 +30,7 @@ class NrmCore(Package):
     depends_on('libffi')
     depends_on('libzmq')
     depends_on('ncurses')
-    depends_on('hwloc@2.0.0', type=('build', 'run'))
+    depends_on('hwloc@2.0.0:', type=('build', 'run'))
 
     conflicts('platform=darwin', msg='Darwin is not supported.')
     conflicts('platform=windows', msg='Windows is not supported.')
