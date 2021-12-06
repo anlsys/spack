@@ -14,6 +14,7 @@ class Libnrm(AutotoolsPackage):
     url = "https://github.com/anlsys/libnrm/archive/refs/tags/v0.7.0.tar.gz"
     version('0.7.0', sha256='48be63ef90271050d27f03bf3006a71b49e668d2e2a80abd4c2ed02b49ac4204')
 
+    maintainers = ['perarnau']
     tags = ['e4s']
 
     depends_on('m4', type='build')

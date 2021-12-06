@@ -7,11 +7,15 @@ from spack import *
 
 
 class Nrm(Package):
-    """Node Resource Manager. Contains documentation and examples."""
+    """Node Resource Manager. Contains documentation and examples.
+    Installs nrm-core and py-nrm."""
 
     homepage = "https://nrm.readthedocs.io/en/latest/"
-    git = "https://github.com/anlsys/nrm-docs.git"
-    version("main", branch="main")
+
+    url = "https://github.com/anlsys/nrm-docs/archive/refs/tags/v0.7.0.tar.gz"
+    maintainers = ['perarnau']
+
+    version("0.7.0", sha256="75333e2bcc94cc98ccc3680e056c2e188799aa0cf5d0e56550ec7a9980c13d94")
 
     depends_on('py-nrm@0.7.0', type=('build', 'run'))
     depends_on('nrm-core@0.7.0', type=('build', 'run'))

@@ -10,7 +10,10 @@ class NrmExtra(Package):
     """Node Resource Manager. Contains external sensors and actuator for NRM."""
 
     homepage = "https://nrm.readthedocs.io/en/latest/"
-    git = "https://github.com/anlsys/nrm-extra.git"
-    version("master", branch="master")
+    url = "https://github.com/anlsys/nrm-extra/archive/refs/tags/v0.7.0.tar.gz"
+
+    maintainers = ['perarnau']
+
+    version("0.7.0", sha256="924386f15bc37daa36570dcefc74a28454750f2c27ad2055f59e7c5feda9d37c")
 
     depends_on('libnrm@0.7.0', type=('build', 'run'))
