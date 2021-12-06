@@ -7,8 +7,8 @@ from spack import *
 
 
 class Nrm(Package):
-    """Node Resource Manager. Contains documentation and examples.
-    Installs nrm-core and py-nrm."""
+    """Node Resource Manager. Installs nrm-core and py-nrm.
+    Builds and installs documentation, includes examples."""
 
     homepage = "https://nrm.readthedocs.io/en/latest/"
 
@@ -22,4 +22,11 @@ class Nrm(Package):
 
     depends_on('py-sphinx@2.4.4', type=('build'))
     depends_on('py-docutils@0.17', type=('build'))
-    depends_on('py-nbsphinx', type=(build))
+    depends_on('py-nbsphinx', type=('build'))
+
+    with working_dir('doc'):
+        make('html', parallel=False)
+        mkdirp(prefix.share.html)
+        mkdirp(prefix.share.examples)
+        install_tree('.build/html', prefix.share.html)
+        install_tree('../examples', prefix.share.examples)
