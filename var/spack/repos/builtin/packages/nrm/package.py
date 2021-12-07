@@ -24,9 +24,10 @@ class Nrm(Package):
     depends_on('py-docutils@0.17', type=('build'))
     depends_on('py-nbsphinx', type=('build'))
 
-    with working_dir('doc'):
-        make('html', parallel=False)
-        mkdirp(prefix.share.html)
-        mkdirp(prefix.share.examples)
-        install_tree('.build/html', prefix.share.html)
-        install_tree('../examples', prefix.share.examples)
+    def install(self, spec, prefix):
+        with working_dir('doc'):
+            make('html', parallel=False)
+            mkdirp(prefix.share.html)
+            mkdirp(prefix.share.examples)
+            install_tree('.build/html', prefix.share.html)
+            install_tree('../examples', prefix.share.examples)
