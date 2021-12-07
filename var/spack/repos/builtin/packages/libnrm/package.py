@@ -24,4 +24,3 @@ class Libnrm(AutotoolsPackage):
     depends_on('pkgconfig', type='build')
 
     depends_on('libzmq')
-    depends_on('mpich')

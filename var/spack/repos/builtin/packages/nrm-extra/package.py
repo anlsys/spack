@@ -18,3 +18,5 @@ class NrmExtra(Package):
 
     depends_on('libnrm@0.7.0', type=('build', 'run'))
     depends_on('ompt-openmp', type=('build', 'run'))
+    depends_on('mpich', type=('build', 'run'))
+    depends_on('gcc')
