@@ -11,8 +11,8 @@ class Libnrm(AutotoolsPackage):
     Resource Manager(NRM)."""
 
     homepage = "https://nrm.readthedocs.io/en/latest/"
-    url = "https://github.com/anlsys/libnrm/archive/refs/tags/v0.7.0.tar.gz"
-    version('0.7.0', sha256='48be63ef90271050d27f03bf3006a71b49e668d2e2a80abd4c2ed02b49ac4204')
+    url = "https://github.com/anlsys/libnrm/releases/download/v0.7.0/libnrm-0.7.0.tar.gz"
+    version('0.7.0', sha256='30933537e9db6c1f35a3eda421794d2a562c492b520ed20e6490571b3ce0f1d8')
 
     maintainers = ['perarnau']
     tags = ['e4s']
