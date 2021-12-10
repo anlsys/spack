@@ -17,10 +17,5 @@ class Libnrm(AutotoolsPackage):
     maintainers = ['perarnau']
     tags = ['e4s']
 
-    depends_on('m4', type='build')
-    depends_on('autoconf', type='build')
-    depends_on('automake', type='build')
-    depends_on('libtool', type='build')
     depends_on('pkgconfig', type='build')
-
     depends_on('libzmq')
