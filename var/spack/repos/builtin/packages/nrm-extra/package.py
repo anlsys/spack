@@ -16,7 +16,6 @@ class NrmExtra(Package):
 
     version("0.7.0", sha256="924386f15bc37daa36570dcefc74a28454750f2c27ad2055f59e7c5feda9d37c")
 
-    depends_on('libnrm@0.7.0', type=('build', 'run'))
-    depends_on('ompt-openmp', type=('build', 'run'))
-    depends_on('mpich', type=('build', 'run'))
-    depends_on('gcc')
+    depends_on('libnrm@0.7.0', type=('build'))
+    depends_on('llvm-openmp@12.0.1', type=('build'))
+    depends_on('mpi', type=('build'))
