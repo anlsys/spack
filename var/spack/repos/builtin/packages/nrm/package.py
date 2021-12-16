@@ -19,6 +19,8 @@ class Nrm(Package):
 
     depends_on('py-nrm@0.7.0', type=('build', 'run'))
     depends_on('nrm-core@0.7.0', type=('build', 'run'))
+    depends_on('libnrm@0.7.0', type=('build', 'run'))
+    depends_on('nrm-extra@0.7.0', type=('build', 'run'))
 
     depends_on('py-sphinx@2.4.4', type=('build'))
     depends_on('py-docutils@0.17', type=('build'))
